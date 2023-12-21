@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food - Welcome to Sabah</title>
+      <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+       nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffd700; /* Change to your preferred hover color */
+        }
+
+        .main-content {
+		
+            padding: 20px 0; /* Adjust padding as needed */
+            text-align: justify;
+        }
+
+        .food-menu {
+            display: flex;
+			
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .food-item {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav><center>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+					 <li><a href="food.html">Food</a></li> 
+                    <li><a href="places.html">Places to Visit</a></li>
+                    <li><a href="etnics.html">Etnics</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul></center>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+            <center>
+                <h2>Etnics In Sabah</h2>
+            </center>
+
+            <div class="food-menu" id="foodMenu">
+                <!-- JavaScript will dynamically populate this section -->
+            </div>
+
+            <script>
+                // Sample food data
+                const foodData = [
+                    { name: 'Amplang', description: 'Amplang is one of the famous crackers or snacks in the state of Sabah. Keropok Amplang is very popular in Sabah and is a traditional food for the Bugis in Sabah.', price: 'RM 10.00', image: 'images/amplang.jpg' },
+                    { name: 'Ambuyat', description: 'Ambuyat is a dish derived from the interior trunk of the sago palm. It is a starchy bland substance, similar to tapioca starch.', price: 'RM 15.00', image: 'images/ambuyat.jpg' },
+                    { name: 'Ayam Bambangan', description: 'The chicken is marinated in bambangan, lemongrass gravy, served with steamed hill rice and stir fried wild fern shoot.', price: 'RM 8.00', image: 'images/ayam.jpg' },
+                    { name: 'Hinava', description: 'Hinava is a traditional native dish of the Kadazan-Dusun. Made from fish and mixed with lime juice,sliced shallots and grated ginger.', price: 'RM 5.00', image: 'images/hinava.jpg' },
+                    
+                ];
+
+                // Function to populate the food menu
+                function populateFoodMenu() {
+                    const foodMenuContainer = document.getElementById('foodMenu');
+
+                    foodData.forEach(foodItem => {
+                        const foodItemHTML = `
+                            <div class="food-item">
+                                <img src="${foodItem.image}" alt="${foodItem.name}" style="width: 100%; max-height: 200px; object-fit: cover; ">
+                                <h3>${foodItem.name}</h3>
+                                <p>${foodItem.description}</p>
+                                <p>${foodItem.price}</p>
+                            </div>
+                        `;
+                        foodMenuContainer.innerHTML += foodItemHTML;
+                    });
+                }
+
+                // Call the function to populate the food menu
+                populateFoodMenu();
+            </script>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Welcome to Sabah</p>
+        </div>
+    </footer>
+
+  
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etnics in Sabah - Welcome to Sabah</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #001D54;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffd700; /* Change to your preferred hover color */
+        }
+
+        .main-content {
+            padding: 20px 0; /* Adjust padding as needed */
+            text-align: justify;
+        }
+
+        .food-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .f-item {
+            width: calc(50% - 40px);
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        .f-item img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px 5px 0 0; /* Rounded corners only at the top */
+        }
+
+        footer {
+            background-color: #001D54;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <center>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="food.html">Food</a></li> 
+                        <li><a href="places.html">Places to Visit</a></li>
+                        <li><a href="etnics.html">Etnics</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </center>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+            <center>
+                <h2>Ethnic Groups in Sabah</h2>
+            </center>
+
+            <div class="food-menu" id="ethnicGroups">
+                <!-- JavaScript will dynamically populate this section -->
+            </div>
+
+            <script>
+                // Sample ethnic groups data
+                const ethnicGroupsData = [
+                    { name: 'Kadazan-Dusun', description: 'The Kadazan-Dusun community is the largest indigenous group in Sabah, known for their rich cultural heritage and traditions. They celebrate the annual harvest festival called "Kaamatan" with traditional dances and rituals. Kadazan-Dusun people are also skilled in handicrafts such as beadwork and bamboo crafts.', image: 'images/kadazan.jpg' },
+                    { name: 'Bajau', description: 'The Bajau community is known for their seafaring lifestyle and are often referred to as "Sea Gypsies." They are skilled fishermen and are expert divers. The Bajau people have unique boat-dwelling communities and are known for their vibrant cultural festivals and traditional music.', image: 'images/bajau.jpg' },
+                    { name: 'Bugis', description: 'Bugis in Sabah refers to individuals born from Bugis descent from Sulawesi on their father side and Bugis descent on their mother side who live in Sabah, Malaysia. In Sabah, the Bugis have become one of the largest community groups to date.', image: 'images/bugis.jpg' },
+                    { name: 'Rungus', description: 'The Rungus community is known for their traditional longhouses and unique beadwork. They have a close connection to nature and practice agriculture. Rungus people celebrate various festivals, and their traditional attire is adorned with intricate bead designs.', image: 'images/rungus.jpg' }
+                    // Add more ethnic groups as needed
+                ];
+
+                // Function to populate the ethnic groups section
+                function populateEthnicGroups() {
+                    const ethnicGroupsContainer = document.getElementById('ethnicGroups');
+
+                    ethnicGroupsData.forEach(ethnicGroup => {
+                        const ethnicGroupHTML = `
+                            <div class="f-item">
+                                <img src="${ethnicGroup.image}" alt="${ethnicGroup.name}">
+                                <h3>${ethnicGroup.name}</h3>
+                                <p>${ethnicGroup.description}</p>
+                            </div>
+                        `;
+                        ethnicGroupsContainer.innerHTML += ethnicGroupHTML;
+                    });
+                }
+
+                // Call the function to populate the ethnic groups section
+                populateEthnicGroups();
+            </script>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Welcome to Sabah</p>
+        </div>
+    </footer>
+</body>
+</html>

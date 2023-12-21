@@ -10,27 +10,32 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #001D54;
     color: white;
     padding: 20px 0;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+ nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffd700; /* Change to your preferred hover color */
+        }
 
 .hero {
 	
@@ -70,7 +75,7 @@ nav a {
 }
 
 footer {
-    background-color: #333;
+    background-color: #003369;
     color: white;
     text-align: center;
     padding: 10px 0;
