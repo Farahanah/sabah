@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food - Welcome to Sabah</title>
+      <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .main-content {
+		
+            padding: 20px 0; /* Adjust padding as needed */
+            text-align: justify;
+        }
+
+        .food-menu {
+            display: flex;
+			
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .food-item {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav><center>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="food.html">Food</a></li> 
+                    <li><a href="places.html">Places to Visit</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="culture.html">Culture</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul></center>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+            <center>
+                <h2>Interesting Food In Sabah</h2>
+            </center>
+
+            <div class="food-menu" id="foodMenu">
+                <!-- JavaScript will dynamically populate this section -->
+            </div>
+
+            <script>
+                // Sample food data
+                const foodData = [
+                    { name: 'Amplang', description: 'Amplang is one of the famous crackers or snacks in the state of Sabah. Keropok Amplang is very popular in Sabah and is a traditional food for the Bugis in Sabah.', price: 'RM 10.00', image: 'images/amplang.jpg' },
+                    { name: 'Ambuyat', description: 'Ambuyat is a dish derived from the interior trunk of the sago palm. It is a starchy bland substance, similar to tapioca starch.', price: 'RM 15.00', image: 'images/ambuyat.jpg' },
+                    { name: 'Ayam Bambangan', description: 'The chicken is marinated in bambangan, lemongrass gravy, served with steamed hill rice and stir fried wild fern shoot.', price: 'RM 8.00', image: 'images/ayam.jpg' },
+                    { name: 'Hinava', description: 'Hinava is a traditional native dish of the Kadazan-Dusun. Made from fish and mixed with lime juice,sliced shallots and grated ginger.', price: 'RM 5.00', image: 'images/hinava.jpg' },
+                    { name: 'Borobbok', description: 'Barobbo is one of the special foods and is very popular among the Bugis community or tribe. It is rice porridge.', price: 'RM 7.00', image: 'images/borobbok.jpg' },
+                    { name: 'Sanggar Peppek (Pisang Ketuk)', description: 'Sanggar Pappek is one of the traditional cakes of the Bugis tribe in Sabah. Made from Sabak bananas and sambal belacan.', price: 'RM 5.00', image: 'images/sanggar.png' },
+                    { name: 'Tuhau', description: 'Tuhau is a dish served among the Kadazan-Dusun people in Sabah, it is made from a type of local wild ginger with the same name or its scientific name Etlingera coccinea', price: 'Rm10.00', image: 'images/tuhau.jpg' },
+                    { name: 'Buras', description: 'Burasa, burasak or buras is an Bugisian rice dumpling, cooked with coconut milk packed inside a banana leaf pouch. It is similar to lontong, but with a richer flavour acquired from the coconut milk.', price: 'RM5.00', image: 'images/buras.jpg' },
+                    { name: 'Latok', description: 'Latok or the title given "Sea Grape" is a type of sea plant resembling a small green grape. Latok can be found in any market in Sabah and is also served in any seafood restaurant in Sabah.', price: 'RM2.00', image: 'images/latok.jpg' },
+                    // Add more food items as needed
+                ];
+
+                // Function to populate the food menu
+                function populateFoodMenu() {
+                    const foodMenuContainer = document.getElementById('foodMenu');
+
+                    foodData.forEach(foodItem => {
+                        const foodItemHTML = `
+                            <div class="food-item">
+                                <img src="${foodItem.image}" alt="${foodItem.name}" style="width: 100%; max-height: 200px; object-fit: cover; ">
+                                <h3>${foodItem.name}</h3>
+                                <p>${foodItem.description}</p>
+                                <p>${foodItem.price}</p>
+                            </div>
+                        `;
+                        foodMenuContainer.innerHTML += foodItemHTML;
+                    });
+                }
+
+                // Call the function to populate the food menu
+                populateFoodMenu();
+            </script>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Welcome to Sabah</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
